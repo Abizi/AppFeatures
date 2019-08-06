@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TicTacToe.TicTacToe">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay_TTT_InfoLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@id/lay_TTT_BtnLay"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0">
+
+        <TextView
+            android:id="@+id/txt_TTT_Player1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/txt_TTT_Player1"
+            app:layout_constraintBottom_toTopOf="@id/txt_TTT_Player2"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/txt_TTT_Player1Score"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_TTT_Player2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/txt_TTT_Player2"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/txt_TTT_Player2Score"
+            app:layout_constraintTop_toBottomOf="@id/txt_TTT_Player1" />
+
+        <TextView
+            android:id="@+id/txt_TTT_Player1Score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toTopOf="@id/txt_TTT_Player2Score"
+            app:layout_constraintLeft_toRightOf="@id/txt_TTT_Player1"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Player 1 Score" />
+
+        <TextView
+            android:id="@+id/txt_TTT_Player2Score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/txt_TTT_Player2"
+            app:layout_constraintTop_toBottomOf="@id/txt_TTT_Player1Score"
+            tools:text="Player 2 Score" />
+
+        <Button
+            android:id="@+id/btn_TTT_Reset"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/btn_TTT_Reset"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/lay_TTT_BtnLay"
+        android:layout_width="match_parent"
+        android:layout_height="377dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lay_TTT_InfoLay">
+
+        <Button
+            android:id="@+id/btn_TTT_Box00"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_TTT_Box10"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_TTT_Box01"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_TTT_Box01"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_TTT_Box11"
+            app:layout_constraintLeft_toRightOf="@id/btn_TTT_Box00"
+            app:layout_constraintRight_toLeftOf="@id/btn_TTT_Box02"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_TTT_Box02"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_TTT_Box12"
+            app:layout_constraintLeft_toRightOf="@id/btn_TTT_Box01"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btn_TTT_Box10"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_TTT_Box20"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_TTT_Box11"
+            app:layout_constraintTop_toBottomOf="@id/btn_TTT_Box00" />
+
+        <Button
+            android:id="@+id/btn_TTT_Box11"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_TTT_Box21"
+            app:layout_constraintLeft_toRightOf="@id/btn_TTT_Box10"
+            app:layout_constraintRight_toLeftOf="@id/btn_TTT_Box12"
+            app:layout_constraintTop_toBottomOf="@id/btn_TTT_Box01" />
+
+        <Button
+            android:id="@+id/btn_TTT_Box12"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@id/btn_TTT_Box22"
+            app:layout_constraintLeft_toRightOf="@id/btn_TTT_Box11"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_TTT_Box02" />
+
+        <Button
+            android:id="@+id/btn_TTT_Box20"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/btn_TTT_Box21"
+            app:layout_constraintTop_toBottomOf="@id/btn_TTT_Box10" />
+
+        <Button
+            android:id="@+id/btn_TTT_Box21"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btn_TTT_Box20"
+            app:layout_constraintRight_toLeftOf="@id/btn_TTT_Box22"
+            app:layout_constraintTop_toBottomOf="@id/btn_TTT_Box11" />
+
+        <Button
+            android:id="@+id/btn_TTT_Box22"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/btn_TTT_Box21"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_TTT_Box12" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

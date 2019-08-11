@@ -1,7 +1,6 @@
 package com.example.appfeatures.TicTacToe;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -13,8 +12,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.example.appfeatures.R;
 
 public class TicTacToe extends AppCompatActivity implements View.OnClickListener {
-
-    public static final String TAG = "Tic_Tac_Toe";
 
     private Button[][] buttons = new Button[3][3];
 
@@ -71,20 +68,20 @@ public class TicTacToe extends AppCompatActivity implements View.OnClickListener
 
         roundCount++;
 
-        if (checkForWin()){
-            if (player1Turn){
+        if (checkForWin()) {
+            if (player1Turn) {
                 player1Wins();
             } else {
                 player2Wins();
             }
-        } else if(roundCount == 9){
+        } else if (roundCount == 9) {
             draw();
         } else {
             player1Turn = !player1Turn;
         }
     }
 
-    private boolean checkForWin(){
+    private boolean checkForWin() {
         String[][] field = new String[3][3];
 
         for (int i = 0; i < 3; i++) {
@@ -104,33 +101,33 @@ public class TicTacToe extends AppCompatActivity implements View.OnClickListener
         return field[0][2].equals(field[1][1]) && field[0][2].equals(field[2][0]) && !field[0][2].equals("");
     }
 
-    private void player1Wins(){
+    private void player1Wins() {
         player1Point++;
         Toast.makeText(this, "Player 1 Wins!", Toast.LENGTH_SHORT).show();
         updatePoints();
         resetBoard();
     }
 
-    private void player2Wins(){
+    private void player2Wins() {
         player2Point++;
         Toast.makeText(this, "Player 2 Wins!", Toast.LENGTH_SHORT).show();
         updatePoints();
         resetBoard();
     }
 
-    private void draw(){
+    private void draw() {
         Toast.makeText(this, "Draw!", Toast.LENGTH_SHORT).show();
         resetBoard();
     }
 
-    private void updatePoints(){
+    private void updatePoints() {
         String score1 = " " + player1Point;
         String score2 = " " + player2Point;
         textViewPlayer1.setText(score1);
         textViewPlayer2.setText(score2);
     }
 
-    private void resetBoard(){
+    private void resetBoard() {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 buttons[i][j].setText("");
@@ -145,7 +142,7 @@ public class TicTacToe extends AppCompatActivity implements View.OnClickListener
         }
     }
 
-    private void resetGame(){
+    private void resetGame() {
         player1Point = 0;
         player2Point = 0;
         updatePoints();
